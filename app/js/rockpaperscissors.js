@@ -29,8 +29,6 @@ function getPlayerMove(move) {
     return move;
 }
 
-var playerMv = getPlayerMove();
-
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
@@ -38,8 +36,6 @@ function getComputerMove(move) {
     move = move || randomPlay();
     return move;
 }
-
-var computerMv = getComputerMove();
 
 function getWinner(playerMove,computerMove) {
     var winner;
