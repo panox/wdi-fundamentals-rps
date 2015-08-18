@@ -25,14 +25,16 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return move = move || getInput();/* Your Expression */
+    move = move || getInput();/* Your Expression */
+    return move;
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return move = move || randomPlay();/* Your Expression */
+    move = move || randomPlay();/* Your Expression */
+    return move;
 }
 
 function getWinner(playerMove,computerMove) {
@@ -41,6 +43,44 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+    if (playerMove == "rock") {
+        switch (computerMove) {
+            case "rock":
+            winner = "tie";
+            break;
+            case "scissors":
+            winner = "player";
+            break;
+            case "paper":
+            winner = "computer";
+            break;
+        }
+    } else if (playerMove == "paper") {
+         switch (computerMove) {
+            case "rock":
+            winner = "player";
+            break;
+            case "scissors":
+            winner = "computer";
+            break;
+            case "paper":
+            winner = "tie";
+            break;
+        }
+    } else if (playerMove == "scissors") {
+        switch (computerMove) {
+            case "rock":
+            winner = "computer";
+            break;
+            case "scissors":
+            winner = "tie";
+            break;
+            case "paper":
+            winner = "player";
+            break;
+        }
+    }
+
     return winner;
 }
 
