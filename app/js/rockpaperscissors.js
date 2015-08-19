@@ -100,7 +100,7 @@ function playToFive() {
         }
     console.log("Player: " + playerWins, "Computer: " + computerWins);
     }
-    return [playerWins,computerWins];
+    return ["Player Wins: " + playerWins,"Computer Wins: " + computerWins];
 }
 
 playToFive();
