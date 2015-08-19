@@ -21,6 +21,12 @@ function randomPlay() {
 /*           Write Your Code Below            */
 ////////////////////////////////////////////////
 
+function winTimes() {
+    console.log("Please choose how many wins are needed to end the game");
+    return prompt();
+}
+var howManyTimes = winTimes();
+
 function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
@@ -84,13 +90,13 @@ function getWinner(playerMove,computerMove) {
     return winner;
 }
 
-function playToFive() {
+function playToFive(times) {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
     var actualWinner;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    while (playerWins < 5 && computerWins < 5) {
+    while (playerWins < times && computerWins < times) {
     actualWinner = getWinner(getPlayerMove(),getComputerMove());
     if (actualWinner == "player") {
         playerWins +=1;
@@ -103,4 +109,4 @@ function playToFive() {
     return ["Player Wins: " + playerWins,"Computer Wins: " + computerWins];
 }
 
-playToFive();
+playToFive(howManyTimes);
